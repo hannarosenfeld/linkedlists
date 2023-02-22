@@ -26,23 +26,25 @@ class SinglyLinkedList {
 
     addToTail(val) {
         // There are bugs in this method! Fix them!!!
-
+        // console.log(`start length: ${this.length}`);
+        // console.log(`start list: ${this}`);
         // Add node of val to tail of linked list
-        let newNode = new SinglyLinkedNode(data);
-
+        let newNode = new SinglyLinkedNode(val);
+        this.length++;
         if (!this.head) {
             this.head = newNode;
-            return this.head;
-        }
+           return this;
+        } else {
 
         let curr = this.head;
-        while (curr) {
-            curr = current.next;
+        while (curr.next) {
+            curr = curr.next;
         }
         curr.next = newNode;
-
-        return this.head;
-
+    }
+    // console.log(`end length: ${this.length}`);
+    // console.log(`end list: ${this}`);
+       return this;
         // Write your hypothesis on the time complexity of this method here
     }
 
@@ -83,3 +85,8 @@ module.exports = {
     SinglyLinkedList,
     SinglyLinkedNode
 }
+
+
+const list = new SinglyLinkedList();
+
+list.addToTail('test');
