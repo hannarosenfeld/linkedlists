@@ -50,16 +50,23 @@ class SinglyLinkedList {
 
     removeFromHead() {
         // Remove node at head
+        if (!this.length) return;
+        // Should remove head node from the list
+        // by reassigning the head pointer to the next node
+        let remove = this.head
+        this.head = this.head.next;
 
-        // Your code here
+        this.length--;
 
+        return remove;
         // Write your hypothesis on the time complexity of this method here
     }
 
     removeFromTail() {
         // Remove node at tail
-
+        if (!this.length) return;
         // Your code here
+        
 
         // Write your hypothesis on the time complexity of this method here
     }
