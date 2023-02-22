@@ -21,7 +21,7 @@ class SinglyLinkedList {
         this.length++;
         return this;
 
-        // Write your hypothesis on the time complexity of this method here
+        // Write your hypothesis on the time complexity of this method here O(1)
     }
 
     addToTail(val) {
@@ -45,7 +45,7 @@ class SinglyLinkedList {
     // console.log(`end length: ${this.length}`);
     // console.log(`end list: ${this}`);
        return this;
-        // Write your hypothesis on the time complexity of this method here
+        // Write your hypothesis on the time complexity of this method here O(n)
     }
 
     removeFromHead() {
@@ -59,16 +59,31 @@ class SinglyLinkedList {
         this.length--;
 
         return remove;
-        // Write your hypothesis on the time complexity of this method here
+        // Write your hypothesis on the time complexity of this method here O(1)
     }
 
     removeFromTail() {
         // Remove node at tail
         if (!this.length) return;
-        // Your code here
-        
+        this.length--;
 
-        // Write your hypothesis on the time complexity of this method here
+        let curr = this.head;
+        let prev;
+
+
+        while (curr.next) {
+            prev = curr;
+            curr = curr.next;
+
+        }
+        if (prev) {
+        prev.next = null;
+        } else {
+        this.head = null;
+        }
+        return curr;
+
+        // Write your hypothesis on the time complexity of this method here O(n)
     }
 
     peekAtHead() {
